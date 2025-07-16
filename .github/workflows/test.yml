@@ -102,7 +102,7 @@ jobs:
           sed -i '/buildPython.*python.exe/d' pyramid/build.gradle
           
       - name: Modify pyramid——build.gradle()
-        #if: ${{ matrix.userName == 'q215613905' && env.commit }}
+        if: ${{ (matrix.userName == 'q215613905' || matrix.userName == 'chengxue2020') && env.commit }}
         working-directory: TVBoxOSC
         run: |
           # 替换Windows路径为系统Python路径
