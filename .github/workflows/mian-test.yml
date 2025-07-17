@@ -2,7 +2,7 @@ name: 打包mian-test
 
 on:
   schedule:
-    - cron: 59 */8 * * *
+  - cron: 59 */8 * * *
   workflow_dispatch:
     inputs:
       rebuild:
