@@ -60,7 +60,7 @@ jobs:
         if: ${{ env.commit }}
         working-directory: TVBoxOSC
         run: |
-        echo '修改VersionName'
+         echo '修改VersionName'
           if [ "${{ matrix.userName }}" == "takagen99" ]; then
             # 进行 sed 修改
             sed -i 's/\.concat(buildTime())/ +\"${{ env.tag }}\"/g' app/build.gradle 
