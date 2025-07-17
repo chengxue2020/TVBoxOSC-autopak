@@ -1,4 +1,4 @@
-name: 打包20250715
+name: 打包main
 
 on:
   schedule:
@@ -23,7 +23,7 @@ jobs:
         include:
           - userName: chengxue2020
             repoName: takagen99
-            branchName: 20250715
+            branchName: main
             java_ver: 17
     steps:
       - name: Checkout
