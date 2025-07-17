@@ -217,7 +217,7 @@ jobs:
             mv ../.github/scripts/upload.py ./
             python upload.py
           fi
-      - name: Push to master
+      - name: Push to main
         if: ${{ env.commit }}
         run: |
           rm -rf TVBoxOSC
@@ -230,7 +230,7 @@ jobs:
           sed -i "/${{ matrix.userName }}\/${{ matrix.repoName }}/s#Updated: [a-zA-Z0-9]*#Updated: ${{ env.commit }}#" README.md
           git add --all
           git commit -m "${{ env.commit }}"
-          git push -u -f origin master
+          git push -u -f origin mian
 
   telegram-bot-api:
     name: Telegram Bot API
