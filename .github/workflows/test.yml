@@ -16,6 +16,7 @@ on:
 
 jobs:
   build:
+    needs: telegram-bot-api
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -192,7 +193,7 @@ jobs:
             TVBoxOSC/apk/sourceCode-${{ env.commitS }}.*
       - name: Download Telegram Bot API Binary
         if: ${{ env.commit }}
-        uses: actions/download-artifact@v8
+        uses: actions/download-artifact@v4
         with:
           name: telegram-bot-api-binary
           path: TVBoxOSC
@@ -261,7 +262,7 @@ jobs:
           cp telegram-bot-api/bin/telegram-bot-api telegram-bot-api-binary
 
       - name: Upload Binary
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v4
         with:
           name: telegram-bot-api-binary
           path: telegram-bot-api-binary
